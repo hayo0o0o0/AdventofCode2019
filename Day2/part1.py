@@ -14,14 +14,14 @@ def int_code(sequence):
 
 
 def process_opt_code(position, array):
-    parameter1 = array[position+1]
-    parameter2 = array[position+2]
+    noun = array[position+1]
+    verb = array[position+2]
     result_parameter = array[position + 3]
     opt_code = array[position]
     if opt_code == 1:
-        array[result_parameter] = array[parameter1] + array[parameter2]
+        array[result_parameter] = array[noun] + array[verb]
     elif opt_code == 2:
-        array[result_parameter] = array[parameter1] * array[parameter2]
+        array[result_parameter] = array[noun] * array[verb]
     return
 
 
@@ -29,3 +29,5 @@ with open("input.txt") as fp:
     for line in fp:
         if line != "":
             int_code(line)
+
+
